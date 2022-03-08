@@ -1,12 +1,13 @@
 package Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pile {
     String name;
     public ArrayList<Card> deck;
 
-    //constructor for Creating a Pile including A Deck with 52 Cards (without Jokers)
+    //Constructor for Creating a Pile including A Deck with 52 Cards (without Jokers)
     public Pile() {
         List<String> suits = Card.getValidSuits();
         List<String> ranks = Card.getValidRanks();
@@ -26,7 +27,7 @@ public class Pile {
         deck = new ArrayList<>();
     }
 
-    //method to populate the Piles using the deck of cards
+    //Populating the Piles using the deck of cards
     public static void SplitDeck(Pile p, ArrayList<Pile> clock) {
         for (int j = 0; j < 13; j++) {
             for (int i = 0; i < 4; i++) {
@@ -38,7 +39,8 @@ public class Pile {
         }
     }
 
-    public static void CreateClock(ArrayList clock) {
+    //Creating The Clock For the Game With Piles Named After Each Rank
+    public static void CreateClock(ArrayList<Pile> clock) {
         List<String> ranks = Card.getValidRanks();
         for (String rank : ranks) {
             clock.add(new Pile(rank));
@@ -46,6 +48,7 @@ public class Pile {
 
     }
 
+    @Override
     public String toString() {
         return ("" + deck);
     }

@@ -7,12 +7,13 @@ public class Card {
     String rank, suit;
     boolean moved;
 
+    //Card Constructor for Creating A Card for Deck
     public Card(String rank, String suit, boolean moved) {
         setRank(rank);
         setSuit(suit);
         this.moved = moved;
     }
-
+    //Card Constructor for Creating A Card as Storage During Game
     public Card(boolean moved) {
         this.moved = moved;
     }
